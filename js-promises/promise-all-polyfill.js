@@ -10,7 +10,8 @@ const myPromiseAll = (promisesArray) => {
 
   return new Promise((resolve, reject) => {
     promisesArray.forEach((promise, index) => {
-      promise.then((val) => {
+      Promise.resolve(promise)
+      .then((val) => {
         result[index] = val;
         promisesCount += 1;
 

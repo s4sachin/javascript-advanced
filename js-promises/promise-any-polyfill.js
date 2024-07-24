@@ -6,7 +6,7 @@ const myPromiseAny = (promisesArray) => {
 
   return new Promise((resolve, reject) => {
     promisesArray.forEach((promise, index) => {
-      promise
+      Promise.resolve(promise)
         .then((val) => resolve(val))
         .catch((err) => {
           errorResult[promiseCount] = err;
@@ -18,6 +18,7 @@ const myPromiseAny = (promisesArray) => {
     });
   });
 };
+
 
 /* Test Cases */
 
